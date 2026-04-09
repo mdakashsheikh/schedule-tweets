@@ -6,6 +6,14 @@
       local: true,
       class: "max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded-lg"
     ) do |form| %>
+    
+  <% if @user.errors.any? %>
+    <div class="p-4 mb-4 text-sm text-gray-800 bg-red-100 rounded-lg" role="alert">
+      <% @user.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
 
   
   <div class="mb-4">
